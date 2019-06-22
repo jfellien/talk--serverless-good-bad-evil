@@ -19,6 +19,14 @@
       "connectionStringSetting":"MyDataStorageConnection"
     },
     {
+      "type": "serviceBus",
+      "direction": "out",
+      "name": "vertragWurdeUnterzeichnet",
+      "accessRights": "listen",
+      "connection": "DWX2019ServiceBus",
+      "topicName": "vertrag-wurde-unterzeichnet"
+    },
+    {
       "type": "http",
       "direction": "out",
       "name": "res"

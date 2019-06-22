@@ -21,8 +21,25 @@
     },
     {
       "type": "cosmosDB",
+      "direction": "in",
+      "name": "fahrzeugIn",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme",
+      "connectionStringSetting":"MyDataStorageConnection",
+      "sqlQuery":"SELECT * FROM c WHERE c.data.fahrzeug.kennzeichen = {kennzeichen} AND c.document_type = 'fahrzeug'"
+    },
+    {
+      "type": "cosmosDB",
       "direction": "out",
       "name": "ruecknahme",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme",
+      "connectionStringSetting":"MyDataStorageConnection"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "fahrzeugOut",
       "databaseName":"production",
       "collectionName":"fahrzeugruecknahme",
       "connectionStringSetting":"MyDataStorageConnection"

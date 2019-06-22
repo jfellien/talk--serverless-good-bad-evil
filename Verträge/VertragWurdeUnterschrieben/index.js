@@ -28,8 +28,8 @@ module.exports = async (context, req) => {
            data : req.body 
         };
 
-        /// Neues Vertragsobjekt an das CosmosDB Binding übergeben
         context.bindings.vertrag = vertrag;
+        context.bindings.vertragWurdeUnterzeichnet = req.body;
 
         response_message = `Unterzeichneter Vertrag mit der ID : ${ vertrag.id } wurde abgespeichert`
     }

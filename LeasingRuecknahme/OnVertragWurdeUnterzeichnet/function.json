@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "unterzeichneterVertrag",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "vertrag-wurde-unterzeichnet",
+      "subscriptionName": "fahrzeugruecknahme",
+      "connection": "DWX2019ServiceBus"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "fahrzeug",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme",
+      "connectionStringSetting":"MyDataStorageConnection"
+    }
+  ]
+}

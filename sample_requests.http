@@ -1,8 +1,7 @@
 /// Beispiel Requests
-/// Man braucht zum Ausführen die VS Code Erweiterung REST Client
-///
+/// Man braucht zum Ausführen die VS Code Extension "REST Client"
 
-POST http://localhost:7071/api/contract-signed
+POST http://localhost:7010/api/contract-signed
 Content-Type: application/json
 
 {
@@ -25,15 +24,14 @@ Content-Type: application/json
     }
 }
 
+###
+GET http://localhost:7010/api/all-contracts
 
 ###
-GET http://localhost:7071/api/all-contracts
+GET http://localhost:7010/api/search/kennzeichen/IA-B 7104
 
 ###
-GET http://localhost:7071/api/search/kennzeichen/IA-B 7104
-
-###
-POST http://localhost:7071/api/expert-report-requested
+POST http://localhost:7030/api/expert-report-requested
 Content-Type: application/json
 
 {
@@ -42,7 +40,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:7071/api/expert-report-answered
+POST http://localhost:7030/api/expert-report-answered
 Content-Type: application/json
 
 {
@@ -59,7 +57,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:7071/api/vehicle-returned
+POST http://localhost:7020/api/vehicle-returned
 Content-Type: application/json
 
 {
@@ -67,4 +65,12 @@ Content-Type: application/json
     "tag_der_rueckgabe": "2019-01-01",
     "mitarbeiter_nummer": "jfe",
     "kennzeichen": "IA-B 7104"
+}
+
+###
+POST http://localhost:7020/api/vehicle-return-completed
+Content-Type: application/json
+
+{
+    "id": "3f669b04-e7c6-4b18-92e1-9fdc136fb3ba"
 }
