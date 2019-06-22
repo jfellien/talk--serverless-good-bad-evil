@@ -1,0 +1,44 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "vehicle-returned"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "anzahlRuecknahmenIn",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme",
+      "connectionStringSetting":"MyDataStorageConnection",
+      "sqlQuery":"SELECT * FROM c WHERE c.id = {mitarbeiter_nummer} AND c.document_type = 'counter'"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "ruecknahme",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme",
+      "connectionStringSetting":"MyDataStorageConnection"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "anzahlRuecknahmenOut",
+      "databaseName":"production",
+      "collectionName":"fahrzeugruecknahme", 
+      "connectionStringSetting":"MyDataStorageConnection"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "expert-report-answered"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "gutachtenAnfrage",
+      "databaseName":"production",
+      "collectionName":"gutachten",
+      "connectionStringSetting":"MyDataStorageConnection",
+      "id":"{id}",
+      "partitionKey":"gutachten_anfrage"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "gutachten",
+      "databaseName":"production",
+      "collectionName":"gutachten",
+      "connectionStringSetting":"MyDataStorageConnection"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+/// Beispiel Requests
+/// Man braucht zum Ausführen die VS Code Erweiterung REST Client
+///
+
+POST http://localhost:7071/api/contract-signed
+Content-Type: application/json
+
+{
+    "vertragsnehmer":{
+        "nachname":"Maxe",
+        "vorname":"Bolte",
+    },
+    "vertragsgeber":{
+        "name":"Autohaus Berlin",
+        "händlernummer":"ahb_1",
+        "unterzeichner":"Lutz Marder"
+    },
+    "fahrzeug":{
+        "marke":"super duper marke",
+        "fahrgestellnummer":"1234567890",
+        "kennzeichen":"IA-B 7104"
+    },
+    "ruecknahme_bedingungen" :{
+        "mindest_restwert" : "12000 EUR"
+    }
+}
+
+
+###
+GET http://localhost:7071/api/all-contracts
+
+###
+GET http://localhost:7071/api/search/kennzeichen/IA-B 7104
+
+###
+POST http://localhost:7071/api/expert-report-requested
+Content-Type: application/json
+
+{
+    "ruecknahme_nummer":"",
+    "experten_stelle": "TÜV"
+}
+
+###
+POST http://localhost:7071/api/expert-report-answered
+Content-Type: application/json
+
+{
+    "id":"???",
+    "gutachten" : {
+        "bewertungen":[
+            {
+                "wo":"Kotflügel vorne links",
+                "was":"Kratzer",
+                "minderwert":"250 EUR"
+            }
+        ]
+    }
+}
+
+###
+POST http://localhost:7071/api/vehicle-returned
+Content-Type: application/json
+
+{
+    "kilometerstand": "46233",
+    "tag_der_rueckgabe": "2019-01-01",
+    "mitarbeiter_nummer": "jfe",
+    "kennzeichen": "IA-B 7104"
+}

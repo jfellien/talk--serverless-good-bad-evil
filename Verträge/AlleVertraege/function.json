@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "all-contracts"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "vertraege",
+      "databaseName":"production",
+      "collectionName":"vertrag",
+      "connectionStringSetting":"MyDataStorageConnection"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "search/kennzeichen/{kennzeichen}"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "vertraege",
+      "databaseName":"production",
+      "collectionName":"vertrag",
+      "connectionStringSetting":"MyDataStorageConnection",
+      "sqlQuery":"SELECT * FROM c WHERE c.data.fahrzeug.kennzeichen = {kennzeichen}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}

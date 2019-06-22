@@ -1,0 +1,13 @@
+{
+    "azureFunctions.projectSubpath": "LeasingRücknahme",
+    "azureFunctions.deploySubpath": "LeasingRücknahme",
+    "azureFunctions.projectLanguage": "JavaScript",
+    "azureFunctions.projectRuntime": "~2",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "npm prune",
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true,
+        "node_modules": true
+    }
+}
