@@ -1,6 +1,6 @@
 # talk--serverless-good-bad-evil
 
-Dieses Repository enthält Beispiel Code für den Talk "Serverless good, bad and evil stuff". Aktzell ist es so eingerichtet, dass man in den jeweiligen Unterordnern die run.bat (aktuell nur für Windows verfügbar) startet.
+Dieses Repository enthält Beispiel Code für den Talk "Serverless good, bad and evil stuff". Aktuell ist es so eingerichtet, dass man in den jeweiligen Unterordnern die run.bat (nur für Windows verfügbar) startet. Dann startet die jeweilige Function, die dann über einen ServiiceBus Nachrichten austauscht.
 
 ## Voraussetzungen
 
